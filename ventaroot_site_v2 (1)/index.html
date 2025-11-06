@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Ventaroot</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Monoton&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="loaded">
+  <div id="preloader" class="preloader" aria-hidden="false">
+    <div class="loader-inner">
+      <canvas id="prelogo" width="160" height="160" aria-hidden="true"></canvas>
+      <div class="loading-text">Chargement... <strong>VENTAROOT</strong></div>
+    </div>
+  </div>
+
+  <div class="vhs-overlay" aria-hidden="true"></div>
+
+  <aside class="sidebar" id="sidebar" aria-label="Navigation principale">
+    <div class="brand">
+      <div class="logo-wrap">
+        <img id="side-logo" src="assets/logo.png" alt="Ventaroot logo" class="logo" />
+      </div>
+      <h1 class="brand-title">VENTAROOT</h1>
+    </div>
+
+    <nav class="nav" role="navigation">
+      <a href="index.html" class="nav-link active">Accueil</a>
+      <a href="histoire.html" class="nav-link">Bio / Histoire</a>
+      <a href="membres.html" class="nav-link">Membres Fondateurs</a>
+      <a href="cheats.html" class="nav-link">Serveur / Cheats</a>
+      <a href="status.html" class="nav-link">Status</a>
+      <a href="https://discord.gg/x3mn3qbJ54" target="_blank" class="nav-link discord">Discord</a>
+    </nav>
+
+    <div class="player-compact" id="player-compact" aria-label="Lecteur audio compact">
+      <div class="compact-row">
+        <img id="compact-logo" src="assets/logo.png" alt="" class="compact-logo" />
+        <div class="track-meta">
+          <div class="track-title">Track: <span id="compact-title">Track 1</span></div>
+          <input id="compact-volume" type="range" min="0" max="1" step="0.01" value="0.8" aria-label="Volume" />
+        </div>
+      </div>
+      <div class="controls">
+        <button id="compact-play" class="btn" aria-label="Play/Pause">▶</button>
+        <button id="open-player" class="btn" aria-label="Ouvrir lecteur">Ouvrir</button>
+      </div>
+    </div>
+
+    <footer class="side-footer">© 2025 Ventaroot</footer>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <button id="toggle-sidebar" class="sidebar-toggle" aria-label="Ouvrir navigation">☰</button>
+      <div class="top-actions">
+        <a class="discord-btn" href="https://discord.gg/x3mn3qbJ54" target="_blank">Rejoindre le Discord</a>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="hero-inner">
+        <div class="logo-hero-wrap">
+          <img id="hero-logo" src="assets/logo.png" alt="Ventaroot logo" class="hero-logo" />
+        </div>
+        <h2 id="big-title" class="big-title">VENTAROOT</h2>
+        <p class="subtitle">Née des cendres de la LDC — plus d'espoir, plus d'options.</p>
+      </div>
+    </section>
+
+    <section class="content cards">
+      <article class="card glass">
+        <h3>À propos</h3>
+        <p>La Légion des Cheaters (LDC) s'appelle maintenant Ventaroot. Elle était tombée à cause d'inactivité, mais aujourd'hui, un nouveau nom s'élève avec plus d'espoir, plus de propositions, plus de fonctionnalités et plus d'options. Alastor leader principal, avec Kikou comme son acolyte. C’est l’histoire de l’émergence de Ventaroot, née des cendres de la LDC.</p>
+        <p>Contact &amp; communauté : <a href="https://discord.gg/x3mn3qbJ54" target="_blank">Discord Ventaroot</a></p>
+      </article>
+
+      <article class="card glass">
+        <h3>Membres Fondateurs</h3>
+        <div class="founders">
+          <div class="founder-card founder-alastor">
+            <div class="founder-top"><h4>Alastor</h4><span class="badge">Leader</span></div>
+            <p class="role">Leader de Ventaroot</p>
+            <a class="discord-inline" href="https://discord.gg/x3mn3qbJ54" target="_blank">Contacter sur Discord</a>
+          </div>
+          <div class="founder-card founder-kikou">
+            <div class="founder-top"><h4>Kikou</h4><span class="badge">Co-Leader</span></div>
+            <p class="role">Co-Leader</p>
+            <a class="discord-inline" href="https://discord.gg/x3mn3qbJ54" target="_blank">Contacter sur Discord</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card glass">
+        <h3>Lecteur de musique</h3>
+        <p>Utilise le player ci-contre pour écouter et visualiser le spectre. Le logo réagit en temps réel à l'audio.</p>
+        <button id="open-player-2" class="btn">Ouvrir le Lecteur</button>
+      </article>
+    </section>
+
+    <section class="visualizer-pane" id="visualizer-pane" aria-hidden="true">
+      <div class="player-full" role="dialog" aria-modal="true" aria-label="Lecteur audio complet">
+        <div class="player-left">
+          <div class="player-top">
+            <img id="player-logo" src="assets/logo.png" alt="logo" class="player-logo" />
+            <div>
+              <h3 id="track-name">Track 1</h3>
+              <div class="small-meta"><span id="artist-name">Ventaroot</span></div>
+            </div>
+          </div>
+          <div class="controls big">
+            <button id="prev" class="btn" aria-label="Piste précédente">⟸</button>
+            <button id="play" class="btn" aria-label="Play">Play</button>
+            <button id="pause" class="btn" aria-label="Pause">Pause</button>
+            <button id="next" class="btn" aria-label="Piste suivante">⟹</button>
+            <label>Volume <input id="volume" type="range" min="0" max="1" step="0.01" value="0.8" aria-label="Volume"></label>
+            <label>Choisir piste
+              <select id="track-select" aria-label="Choisir piste">
+                <option value="assets/track1.mp3">Track 1 (default)</option>
+                <option value="assets/track2.mp3">Track 2</option>
+              </select>
+            </label>
+            <a class="discord-inline" href="https://discord.gg/x3mn3qbJ54" target="_blank">Discord</a>
+          </div>
+        </div>
+        <div class="player-right">
+          <canvas id="visualizer" width="1200" height="320"></canvas>
+        </div>
+        <button id="close-player" class="btn close" aria-label="Fermer lecteur">Fermer</button>
+      </div>
+    </section>
+
+    <footer class="footer">© 2025 Ventaroot – Tous droits réservés • <a href="https://discord.gg/x3mn3qbJ54" target="_blank">Discord</a></footer>
+  </main>
+
+  <audio id="audio" crossorigin="anonymous" src="assets/track1.mp3"></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
